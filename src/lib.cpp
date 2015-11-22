@@ -10,12 +10,11 @@ void DataBase::storeComponents(const QList<Component> &components)
 	}
 }
 
-Store::Store(DataBase *dataBase)
-	: dataBase(dataBase)
+Store::Store()
 {
-	addComponent(Component("A", 49));
-	addComponent(Component("B", 22));
-	addComponent(Component("C", 73));
+	items << Component("A", 49);
+	items << Component("B", 22);
+	items << Component("C", 73);
 }
 
 void Store::printItems()
@@ -28,15 +27,10 @@ void Store::printItems()
 
 void Store::storeItemsInDataBase()
 {
-	dataBase->storeComponents(items);
+	dataBase.storeComponents(items);
 }
 
 Component Store::getComponent(int index)
 {
-	return items.value(index);
-}
-
-void Store::addComponent(const Component &c)
-{
-	items << c;
+	return items[index];
 }

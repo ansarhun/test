@@ -18,22 +18,19 @@ struct Component
 class DataBase
 {
 public:
-	virtual void storeComponents(const QList<Component> &components);
+	void storeComponents(const QList<Component> &components);
 };
 
 class Store
 {
 public:
-	Store(DataBase *dataBase = new DataBase());
+	Store();
 
 	void printItems();
 	void storeItemsInDataBase();
 	Component getComponent(int index);
 
 protected:
-	void addComponent(const Component &c);
-
-protected:
 	QList<Component> items;
-	DataBase *dataBase;
+	DataBase dataBase;
 };
