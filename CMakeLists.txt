@@ -15,6 +15,7 @@ message(${Qt5Core_INCLUDE_DIRS})
 
 set(CMAKE_MODULE_PATH {CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 include(gtest)
+include(CodeCoverage)
 
 include_directories(src)
 
