@@ -49,7 +49,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Coverage")
 	add_custom_target(coverage
 		# Capturing lcov counters and generating report
 		COMMAND ${LCOV_PATH} --directory . --capture --gcov-tool ${GCOV_PATH} --output-file ${COVERAGE_OUTPUT_DIR}.info
-		COMMAND ${LCOV_PATH} --remove ${COVERAGE_OUTPUT_DIR}.info '${CMAKE_BINARY_DIR}/*' '/usr/*' '/opt/*' --gcov-tool ${GCOV_PATH} --output-file ${COVERAGE_OUTPUT_DIR}.info.cleaned
+		COMMAND ${LCOV_PATH} --remove ${COVERAGE_OUTPUT_DIR}.info '${CMAKE_BINARY_DIR}/*' '/usr/*' --gcov-tool ${GCOV_PATH} --output-file ${COVERAGE_OUTPUT_DIR}.info.cleaned
 		COMMAND ${GENHTML_PATH} -o ${COVERAGE_OUTPUT_DIR} ${COVERAGE_OUTPUT_DIR}.info.cleaned --branch-coverage
 		COMMAND ${CMAKE_COMMAND} -E remove ${COVERAGE_OUTPUT_DIR}.info ${COVERAGE_OUTPUT_DIR}.info.cleaned
 
