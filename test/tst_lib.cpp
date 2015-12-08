@@ -88,5 +88,5 @@ TEST(TestStore, SaveItemsToDb) {
 
 	ASSERT_EQ(Component("A", 49), db.components.first());
 	ASSERT_EQ(Component("B", 22), db.components.at(1));
-	ASSERT_EQ(Component("C", 73), db.components.last());
+	ASSERT_EQ(Component("C", 730), db.components.last());
 }
